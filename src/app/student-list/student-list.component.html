@@ -3,7 +3,7 @@
 >
   <h2 class="h2">Students List</h2>
   <a
-    routerLink="/register-student"
+    routerLink="/sidebar/register-student"
     class="btn btn-success"
     *ngIf="hideWhenNoStudent"
   >
@@ -47,7 +47,7 @@
           <td class="text-center action-block">
             <span
               class="mr-2 btn btn-outline-primary btn-sm"
-              routerLink="/edit-student/{{ student.$key }}"
+              routerLink="/sidebar/edit-student/{{ student.$key }}"
               >Edit</span
             >
             <span

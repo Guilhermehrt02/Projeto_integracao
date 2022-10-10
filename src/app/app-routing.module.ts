@@ -13,18 +13,20 @@ import { AuthGuard } from './shared/guard/auth.guard';
 import { AddStudentComponent } from './add-student/add-student.component';
 import { StudentListComponent } from './student-list/student-list.component';
 import { EditStudentComponent } from './edit-student/edit-student.component';
+import { SidebarComponent } from './sidebar/sidebar/sidebar.component';
 
 const routes: Routes = [
-  // { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
-  // { path: 'sign-in', component: SignInComponent },
-  // { path: 'register-user', component: SignUpComponent },
-  // { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
-  // { path: 'forgot-password', component: ForgotPasswordComponent },
-  // { path: 'verify-email-address', component: VerifyEmailComponent },
-  { path: '', redirectTo: '/register-student', pathMatch: 'full' },
-  { path: 'register-student', component: AddStudentComponent },
-  { path: 'view-students', component: StudentListComponent },
-  { path: 'edit-student/:id', component: EditStudentComponent }
+  { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
+  { path: 'sign-in', component: SignInComponent },
+  { path: 'sidebar', component: SidebarComponent, children: [
+    { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+    { path: 'register-user', component: SignUpComponent },
+    { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+    { path: 'view-students', component: StudentListComponent },
+    { path: 'edit-student/:id', component: EditStudentComponent },
+    { path: 'register-student', component: AddStudentComponent },]},
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'verify-email-address', component: VerifyEmailComponent },
 ];
 
 @NgModule({

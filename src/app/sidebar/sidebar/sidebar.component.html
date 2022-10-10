@@ -1,0 +1,43 @@
+<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" routerLink="/view-students">
+      <span class="dasboard-text">Home</span>
+    </a>
+    <ul class="navbar-nav px-3">
+    </ul>
+  </nav>
+  <!-- Sidebar navigation -->
+  <div class="container-fluid " >
+    <div class="row">
+      <nav class="col-md-2 d-sm-block bg-dark sidebar bg-dark">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/sidebar/dashboard">
+                <i class="fas fa-user"></i>User Profile
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/sidebar/view-students">
+                Produtos
+              </a>
+            </li>
+            <!-- Calling SignOut() Api from AuthService -->
+            <li class="nav-item">
+              <a class="nav-link" (click)="authService.SignOut()">
+                <i class="fas fa-sign-out-alt"></i>Log out
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+<!-- Main content -->
+<main role="main" class="d-flex justify-content-center align-items-center">
+    <div class="inner-adjust w-50 h-50">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+  
+  
