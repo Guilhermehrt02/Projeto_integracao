@@ -85,7 +85,7 @@ h3 {
 .authBlock {
   margin: 0 auto;
   max-width: 400px;
-  background: white;
+  background: #fffb00;
   padding: 30px 40px 10px;
   overflow: hidden;
   -webkit-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.04);
@@ -361,7 +361,7 @@ i {
 }
 
 .action-block .fa-edit:hover {
-  color: #009688;
+  color: red;
 }
 
 .action-block .fa-trash-alt:hover {
