@@ -1,47 +1,5 @@
 <!-- Top navigation -->
-<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-sm-3 col-md-2 mr-0" routerLink="/view-students">
-    <span class="dasboard-text">Home</span>
-  </a>
-  <ul class="navbar-nav px-3">
-    <li class="nav-item text-nowrap">
-      <a class="nav-link" routerLink="/register-student">
-        <span class="user-image" *ngIf="authService.userData as user">
-          <img class="align-self-start mr-5 img-thumbnail rounded-circle"
-                src="{{(user.photoURL) ? user.photoURL : '../../../assets/dummy-user.png'}}">
-        </span>
-        Hello Admin
-      </a>
-    </li>
-  </ul>
-</nav>
-<!-- Sidebar navigation -->
-<div class="container-fluid " >
-  <div class="row">
-    <nav class="col-md-2 d-sm-block bg-light sidebar bg-dark">
-      <div class="sidebar-sticky">
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link active" routerLink="/dashboard">
-              <i class="fas fa-user"></i>User Profile
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/view-students" routerLinkActive="active">
-              Produtos
-            </a>
-          </li>
-          <!-- Calling SignOut() Api from AuthService -->
-          <li class="nav-item">
-            <a class="nav-link" (click)="authService.SignOut()">
-              <i class="fas fa-sign-out-alt"></i>Log out
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-</div>
+
 <div class="container-fluid">
   <div class="row">
     <!-- Main content -->

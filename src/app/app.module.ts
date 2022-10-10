@@ -26,6 +26,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 // NGX Pagination
 import { NgxPaginationModule } from 'ngx-pagination';
+import { SidebarComponent } from './sidebar/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     VerifyEmailComponent,
     AddStudentComponent,
     EditStudentComponent,
-    StudentListComponent
+    StudentListComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
