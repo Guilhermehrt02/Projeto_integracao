@@ -1,41 +1,52 @@
 <!-- Top navigation -->
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-sm-3 col-md-2 mr-0" routerLink="/register-student">
-    <span class="dasboard-text">Dashboard</span>
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" routerLink="/view-students">
+    <span class="dasboard-text">Home</span>
   </a>
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
       <a class="nav-link" routerLink="/register-student">
-        <span class="user-image" style="background-image: url('assets/user.jpg')"></span>
+        <span class="user-image" *ngIf="authService.userData as user">
+          <img class="align-self-start mr-5 img-thumbnail rounded-circle"
+                src="{{(user.photoURL) ? user.photoURL : '../assets/user.jpg'}}">
+        </span>
         Hello Admin
       </a>
     </li>
   </ul>
 </nav>
 <!-- Sidebar navigation -->
-<div class="container-fluid">
+<div class="container-fluid " >
   <div class="row">
-    <nav class="col-md-2 d-md-block bg-light sidebar">
+    <nav class="col-md-2 d-sm-block bg-light sidebar bg-dark">
       <div class="sidebar-sticky">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link" routerLink="/register-student" routerLinkActive="active">
-              Add Student
+            <a class="nav-link" routerLink="/dashboard">
+              <i class="fas fa-user"></i>User Profile
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="/view-students" routerLinkActive="active">
-              Students List
+              Produtos
+            </a>
+          </li>
+          <!-- Calling SignOut() Api from AuthService -->
+          <li class="nav-item">
+            <a class="nav-link" (click)="authService.SignOut()">
+              <i class="fas fa-sign-out-alt"></i>Log out
             </a>
           </li>
         </ul>
       </div>
     </nav>
-    <!-- Main content -->
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-      <div class="inner-adjust">
-        <router-outlet></router-outlet>
-      </div>
-    </main>
   </div>
 </div>
+
+<!-- Main content -->
+<main role="main" class="d-flex justify-content-center align-items-center">
+  <div class="inner-adjust w-50 h-50">
+    <router-outlet></router-outlet>
+  </div>
+</main>
+
