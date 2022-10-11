@@ -35,9 +35,9 @@ export class EditStudentComponent implements OnInit {
   get lastName() {
     return this.editForm.get('lastName');
   }
-  get email() {
-    return this.editForm.get('email');
-  }
+  // get email() {
+  //   return this.editForm.get('email');
+  // }
   get mobileNumber() {
     return this.editForm.get('mobileNumber');
   }
@@ -45,13 +45,6 @@ export class EditStudentComponent implements OnInit {
     this.editForm = this.fb.group({
       firstName: ['', [Validators.required, Validators.minLength(2)]],
       lastName: [''],
-      email: [
-        '',
-        [
-          Validators.required,
-          Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$'),
-        ],
-      ],
       mobileNumber: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
     });
   }

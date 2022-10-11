@@ -37,7 +37,7 @@
         >
         <th>
             <div class="card">
-              <th scope="col"></th>
+              <th scope="row"></th>
               <td>{{ student.firstName }}</td>
               <td>{{ student.lastName }}</td>
               <!-- <td>{{ student.email }}</td> -->
@@ -68,7 +68,7 @@
             <img class="image" src="../../assets/download.jpg" alt="" />
         </div>
         
-          <span
+          <!-- <span
             class="mr-2 btn btn-outline-primary btn-sm"
             routerLink="/sidebar/edit-student/{{ student.$key }}"
             >Edit</span
@@ -77,7 +77,7 @@
             class="btn btn-outline-danger btn-sm"
             (click)="deleteStudent(student)"
             >Delete</span
-          >
+          > -->
       </th>
         </tr>
       </tbody>

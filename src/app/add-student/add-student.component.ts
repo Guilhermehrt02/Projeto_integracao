@@ -22,12 +22,6 @@ export class AddStudentComponent implements OnInit {
     this.studentForm = this.fb.group({
       firstName: ['', [Validators.required, Validators.minLength(2)]],
       lastName: [''],
-      email: [
-        '',
-        [
-          Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$'),
-        ],
-      ],
       mobileNumber: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
     });
   }
