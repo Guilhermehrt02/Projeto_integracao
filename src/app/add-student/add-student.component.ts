@@ -25,7 +25,6 @@ export class AddStudentComponent implements OnInit {
       email: [
         '',
         [
-          Validators.required,
           Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$'),
         ],
       ],
@@ -38,9 +37,9 @@ export class AddStudentComponent implements OnInit {
   get lastName() {
     return this.studentForm.get('lastName');
   }
-  get email() {
-    return this.studentForm.get('email');
-  }
+  // get email() {
+  //   return this.studentForm.get('email');
+  // }
   get mobileNumber() {
     return this.studentForm.get('mobileNumber');
   }
@@ -50,7 +49,7 @@ export class AddStudentComponent implements OnInit {
   submitStudentData() {
     this.crudApi.AddStudent(this.studentForm.value);
     this.toastr.success(
-      this.studentForm.controls['firstName'].value + ' successfully added!'
+    this.studentForm.controls['firstName'].value + ' successfully added!'
     );
     this.ResetForm();
   }

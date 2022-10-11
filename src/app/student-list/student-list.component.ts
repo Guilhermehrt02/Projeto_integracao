@@ -45,7 +45,7 @@ export class StudentListComponent implements OnInit {
     })
   }
   deleteStudent(student) {
-    if (window.confirm('Are sure you want to delete this student ?')) { 
+    if (window.confirm('Voce deseja deletar esse lanche ?')) { 
       this.crudApi.DeleteStudent(student.$key)
       this.toastr.success(student.firstName + ' successfully deleted!');
     }

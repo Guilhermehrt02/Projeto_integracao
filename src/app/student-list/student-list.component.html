@@ -1,13 +1,13 @@
 <div
   class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
 >
-  <h2 class="h2">Students List</h2>
+  <h2 class="h2">Lista de Lanches</h2>
   <a
     routerLink="/sidebar/register-student"
     class="btn btn-success"
     *ngIf="hideWhenNoStudent"
   >
-    Add Student
+    Adicionar Lanche
   </a>
 </div>
 <div class="pricing-header mx-auto">
@@ -16,35 +16,36 @@
   </div>
   <div class="no-data text-center" *ngIf="noData">
     <img src="assets/no-student.svg" class="nodata-msg" alt="No student" />
-    <p class="nodata-msg">No student added yet!</p>
-    <a routerLink="/register-student" class="btn btn-success"> Add Student </a>
+    <p class="nodata-msg">Nenhum lanche foi adicionado!</p>
+    <a routerLink="/register-student" class="btn btn-success"> Adicionar Lanche </a>
   </div>
   <div class="table-responsive" *ngIf="hideWhenNoStudent">
     <table
       class="table table-bordered table-responsive-sm table-responsive-md table-responsive-lg"
     >
       <thead>
-        <tr>
-          <th scope="col">Student Id</th>
-          <th scope="col">Student name</th>
-          <th scope="col">Email</th>
-          <th scope="col">Mobile number</th>
-          <th class="text-center" scope="col">Edit</th>
-        </tr>
       </thead>
-      <tbody>
+      <tbody *ngFor="
+      let student of Student
+        | paginate: { itemsPerPage: 3, currentPage: p };
+      let i = index
+    " >
+        
         <tr
-          *ngFor="
-            let student of Student
-              | paginate: { itemsPerPage: 8, currentPage: p };
-            let i = index
-          "
+        class="trclass"
+          
         >
-          <th scope="row">{{ student.$key }}</th>
-          <td>{{ student.firstName }} {{ student.lastName }}</td>
-          <td>{{ student.email }}</td>
-          <td>{{ student.mobileNumber }}</td>
-          <td class="text-center action-block">
+        <th>
+            <div class="card">
+              <th scope="col"></th>
+              <td>{{ student.firstName }}</td>
+              <td>{{ student.lastName }}</td>
+              <!-- <td>{{ student.email }}</td> -->
+              <td>{{ student.mobileNumber }}</td>
+              <td class="text-center action-block">
+              <!-- <img class="image" src="user.jpg" alt="" /> -->
+          </div>
+          
             <span
               class="mr-2 btn btn-outline-primary btn-sm"
               routerLink="/sidebar/edit-student/{{ student.$key }}"
@@ -55,7 +56,29 @@
               (click)="deleteStudent(student)"
               >Delete</span
             >
-          </td>
+        </th>
+        <th>
+          <div class="card">
+            <th scope="row"></th>
+            <!-- <td>{{ student.firstName }}</td>
+            <td>{{ student.lastName }}</td>
+            <td>{{ student.email }}</td>
+            <td>{{ student.mobileNumber }}</td> -->
+            <td class="text-center action-block">
+            <img class="image" src="../../assets/download.jpg" alt="" />
+        </div>
+        
+          <span
+            class="mr-2 btn btn-outline-primary btn-sm"
+            routerLink="/sidebar/edit-student/{{ student.$key }}"
+            >Edit</span
+          >
+          <span
+            class="btn btn-outline-danger btn-sm"
+            (click)="deleteStudent(student)"
+            >Delete</span
+          >
+      </th>
         </tr>
       </tbody>
     </table>

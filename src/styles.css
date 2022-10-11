@@ -3,6 +3,41 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+.trclass {
+    /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); */
+    width: 10px;
+    background-color: #fbff00;
+
+}
+
+.card {
+    
+    border-radius: 5px;
+    box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
+    padding: 30px;
+    margin: 40px;
+    width: 250px;
+    transition: all 0.3s ease-out;
+    border-left: 3px solid #4895ff;
+    
+    
+  }
+
+.card:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+ 
+.card p {
+  color: #a3a5ae;
+  font-size: 16px;
+}
+ 
+.image {
+max-height: 107px;
+
+}
+ 
 .feather {
     width: 16px;
     height: 16px;
@@ -49,7 +84,7 @@ body {
 }
 
 .sidebar .nav-link.active {
-    color: #007bff;
+    color: blue;
 }
 
 .sidebar .nav-link:hover .feather,
@@ -111,7 +146,7 @@ body {
 }
 
 .bg-dark {
-    background-color: #fb1e1e !important;
+    background-color: red !important;
 }
 
 .gap-right {
@@ -137,7 +172,7 @@ i {
 }
 
 .action-block .fa-trash-alt:hover {
-    color: #E91E63;
+    color: red;
 }
 
 .btn-primary.focus,
@@ -210,7 +245,7 @@ body .navbar-brand {
 
 /* Form */
 label {
-    font-weight: 500;
+    font-weight: 100;
 }
 
 .form-control {
@@ -219,7 +254,7 @@ label {
 
 /* Misc */
 .no-data img {
-    max-width: 420px;
+    max-width: 400px;
     margin: 20px auto 0;
 }
 
@@ -298,7 +333,7 @@ footer {
 }
 
 /* Responsive */
-@media(max-width:767px) {
+@media(max-width:400px) {
     .sidebar {
         position: static;
         padding: 40px 0 10px;
@@ -377,10 +412,11 @@ footer {
     }
 
     .sidebar {
-        padding: 40px 0 15px;
+        padding: 30px 0 15px;
     }
 
     footer br {
         display: none;
     }
 }
+
