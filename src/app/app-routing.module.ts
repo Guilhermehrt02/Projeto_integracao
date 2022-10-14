@@ -20,12 +20,12 @@ const routes: Routes = [
   { path: 'sign-in', component: SignInComponent },
   { path: 'sidebar', component: SidebarComponent, children: [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-    { path: 'register-user', component: SignUpComponent },
     { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
     { path: 'view-students', component: StudentListComponent },
     { path: 'edit-student/:id', component: EditStudentComponent },
     { path: 'register-student', component: AddStudentComponent },]},
   { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'sign-up', component: SignUpComponent },
   { path: 'verify-email-address', component: VerifyEmailComponent },
 ];
 
