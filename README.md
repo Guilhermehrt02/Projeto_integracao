@@ -63,3 +63,26 @@ Inserção: Botão para adicionar novos produtos.
 Rota: /produtos
 Botão Sair
 Função: Desloga o usuário e retorna à tela de login.
+
+# Plataforma de Gestão de Produtos McDonald's
+
+Este projeto é uma aplicação de desktop desenvolvida em Angular que utiliza o Firebase para autenticação e operações CRUD (Criar, Ler, Atualizar, Deletar) em produtos do McDonald's. Este README fornecerá instruções básicas para configurar e executar o projeto.
+
+## Funcionalidades
+
+1. **Tela Login**: Possibilidade de autenticar com o Google ou com o email pessoal.
+2. **Tela Home**: Contém uma navbar que inclui botões para Home, Perfil, Produtos e Sair.
+3. **Tela Perfil**: Mostra as informações cadastradas pelo usuário no momento do cadastro de conta.
+4. **Tela de Produtos**:
+    - **Visualização**: Exibe os produtos em uma tabela com as seguintes colunas: Nome, Descrição, Valor e Edição.
+    - **Exclusão**: Após apertar em editar, terá a possibilidade de excluir.
+    - **Edição**: Após apertar em editar, abrirá uma nova tela contendo as informações cadastradas e, se for feita alguma edição dos dados nessa tela, será habilitado o botão salvar.
+    - **Inserção**: Botão que ficará na parte superior da tela com o intuito de cadastrar algum produto (incluir uma foto de identificação).
+5. **Botão Sair**: Retornará para a tela de login.
+
+## Instalação
+
+Clone o repositório e navegue até o diretório do projeto:
+```bash
+git clone https://github.com/Guilhermehrt02/Projeto_integracao.git
+cd Projeto_integracao
