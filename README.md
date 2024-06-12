@@ -14,7 +14,7 @@ Este projeto é uma aplicação de desktop desenvolvida em Angular que utiliza o
     - **Inserção**: Botão que ficará na parte superior da tela com o intuito de cadastrar algum produto (incluir uma foto de identificação).
 5. **Botão Sair**: Retornará para a tela de login.
 
-##Configuração
+## Configuração
 
 Crie um arquivo `src/environments/environment.ts` e adicione as configurações do Firebase:
 ```bash
@@ -30,7 +30,7 @@ export const environment = {
   }
 };
 ```
-##Estrutura do Projeto
+## Estrutura do Projeto
 
 1. **src/app/components:** Contém os componentes do projeto (Login, Home, Perfil, Produtos).
 2. **src/app/services:** Contém os serviços utilizados para comunicação com o Firebase.
